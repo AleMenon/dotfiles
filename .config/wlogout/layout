@@ -1,0 +1,28 @@
+{
+    "label" : "lock",
+    "action" : "hyprlock",
+    "text" : "[L]ock",
+    "keybind" : "l",
+    "circular" : true
+}
+{
+    "label" : "logout",
+    "action" : "uwsm stop",
+    "text" : "Lo[g]out",
+    "keybind" : "g",
+    "circular" : true
+}
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "[S]hutdown",
+    "keybind" : "s",
+    "circular" : true
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "[R]eboot",
+    "keybind" : "r",
+    "circular" : true
+}

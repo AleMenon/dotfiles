@@ -1,0 +1,139 @@
+{
+   "reload_style_on_change": true,
+   "height": 20,
+   "spacing": 2, // Gaps between modules (4px)
+
+   // Choose the order of the modules
+   "modules-left": [
+      "hyprland/workspaces",
+      "wlr/taskbar",
+   ],
+
+   "modules-center": [
+      "clock"
+   ],
+
+   "modules-right": [
+      "pulseaudio",
+      "group/connection",
+      "group/energy",
+      "custom/power"
+   ],
+
+   "group/connection": {
+      "orientation": "horizontal",
+      "modules": [
+         "network",
+         "bluetooth"
+      ]
+   },
+
+   "group/energy": {
+      "orientation": "horizontal",
+      "modules": [
+         "backlight",
+         "battery",
+      ]
+   },
+
+   // Modules configuration
+   // Workspaces
+   "hyprland/workspaces" : {
+      "on-click": "activate",
+      "active-only": false,
+      "all-outputs": true,
+      "format": "{}",
+      "format-icons": {
+         "urgent": "",
+         "active": "",
+         "default": ""
+      },
+      "persistent-workspaces": {
+         "*": 4
+      }       
+   },
+
+   // Taskbar
+   "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 20,
+      "tooltip-format": "{title}",
+      "on-click": "activate",
+      "on-click-middle": "close",
+      "ignore-list": [
+         "kitty"
+      ]
+   },
+
+   // Power Menu
+   "custom/power": {
+      "format": "",
+      "on-click": "wlogout --buttons-per-row 2",
+      "tooltip": false
+   },
+
+   "clock": {
+      "format": "{:%a, %d/%m/%y |   %H:%M}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      //"format-alt": "{:%d/%m/%Y}"
+   },
+
+   "battery": {
+      "interval": 1,
+      "states": {
+         // "good": 95,
+         "warning": 30,
+         "critical": 15
+      },
+      "format": "{capacity}% {icon}",
+      "format-full": "{capacity}% {icon}",
+      "format-charging": "{capacity}%  {icon}",
+      "format-plugged": "{capacity}%  {icon}",
+      "format-alt": "{time} {icon}",
+      // "format-good": "", // An empty format will hide the module
+      // "format-full": "",
+      "format-icons": ["", "", "", "", ""]
+   },
+
+   "network": {
+      // "interface": "wlp2*", // (Optional) To force the use of this interface
+      "format-wifi": "{essid}  ",
+      "format-ethernet": "connected 🖧",
+      "tooltip-format": "{ifname} ({signalStrength}%)",
+      "format-linked": "{ifname} (No IP)  ",
+      "format-disconnected": "Disconnected ⚠ ",
+      "on-click": "networkmanager_dmenu"
+   },
+
+   "bluetooth": {
+      // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+      "format": "{status} ",
+      "format-connected": "{num_connections} connected ",
+      "on-click": "blueman-manager"
+   },
+
+   "pulseaudio": {
+      "scroll-step": 1, // %, can be a float
+      "format": "{volume}% {icon} {format_source}",
+      "format-bluetooth": "{volume}%  {format_source}",
+      "format-bluetooth-muted": " {format_source}",
+      "format-muted": "x  {format_source}",
+      "format-source": "  {volume}% ",
+      "format-source-muted": "   ",
+      "format-icons": {
+         "headphone": " ",
+         "hands-free": " ",
+         "headset": " ",
+         "phone": " ",
+         "portable": " ",
+         "car": " ",
+         "default": ["", " ", " "]
+      },
+   },
+
+   "backlight": {
+       "device": "intel_backlight",
+       "format": "{percent}% {icon}",
+       "format-icons": [""]
+   },
+}

@@ -1,0 +1,253 @@
+/*
+* __        __          _                  ____  _         _       
+* \ \      / /_ _ _   _| |__   __ _ _ __  / ___|| |_ _   _| | ___  
+*  \ \ /\ / / _` | | | | '_ \ / _` | '__| \___ \| __| | | | |/ _ \ 
+*   \ V  V / (_| | |_| | |_) | (_| | |     ___) | |_| |_| | |  __/ 
+*    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___| 
+*                 |___/                              |___/         
+*  
+* by Stephan Raabe (2023) 
+* ----------------------------------------------------- 
+*/
+
+/* -----------------------------------------------------
+* Import Pywal colors 
+* ----------------------------------------------------- */
+/* @import 'style-light.css'; */
+@define-color backgroundlight #313244;
+@define-color backgrounddark #1e1e2e;
+@define-color workspacesbackground1 #7f849c;
+@define-color workspacesbackground2 #6c7086;
+@define-color workspacesbackground3 #585b70;
+@define-color bordercolor #b4befe;
+@define-color textcolor1 #bac2de;
+@define-color textcolor2 #a6adc8;
+@define-color textcolor3 #b4befe;
+@define-color iconcolor #cdd6f4;
+
+/* -----------------------------------------------------
+* General 
+* ----------------------------------------------------- */
+
+* {
+   font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+   border: none;
+   border-radius: 0px;
+}
+
+window#waybar {
+   background-color: rgba(0,0,0,0);
+   border-bottom: 0px solid #ffffff;
+   /* color: #FFFFFF; */
+   transition-property: background-color;
+   transition-duration: .5s;
+}
+
+/* -----------------------------------------------------
+* Workspaces 
+* ----------------------------------------------------- */
+
+#workspaces {
+   margin: 3px 1px 3px 1px;
+   padding: 0px 1px;
+   border-radius: 10px;
+   border: 0px;
+   font-weight: bold;
+   font-style: normal;
+   font-size: 15px;
+   color: @textcolor1;
+}
+
+#workspaces button {
+   padding: 0px 5px;
+   margin: 4px 3px;
+   border-radius: 15px;
+   border: 0px;
+   color: @textcolor3;
+   transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+   color: @textcolor1;
+   background: @workspacesbackground3;
+   border-radius: 15px;
+   min-width: 30px;
+   transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+   color: @textcolor1;
+   background: @workspacesbackground3;
+   border-radius: 15px;
+}
+
+/* -----------------------------------------------------
+* Tooltips
+* ----------------------------------------------------- */
+
+tooltip {
+   border-radius: 10px;
+   background-color: @backgrounddark;
+   opacity:0.8;
+   padding:20px;
+   margin:0px;
+   opacity: 1;
+   font-weight: bold;
+}
+
+tooltip label {
+   color: @textcolor2;
+}
+
+/* -----------------------------------------------------
+* Taskbar
+* ----------------------------------------------------- */
+
+#taskbar {
+   background: @backgrounddark;
+   margin: 3px 15px 3px 0px;
+   padding:0px;
+   border-radius: 15px;
+   font-weight: normal;
+   font-style: normal;
+   border: 3px solid @backgrounddark;
+}
+
+#taskbar button {
+   margin:0;
+   border-radius: 15px;
+   padding: 0px 5px 0px 5px;
+}
+
+#taskbar button:hover {
+   color: @textcolor1;
+   background: @workspacesbackground2;
+   border-radius: 15px;
+}
+
+/* -----------------------------------------------------
+* Modules
+* ----------------------------------------------------- */
+
+.modules-left > widget:first-child > #workspaces {
+   margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+   margin-right: 0;
+}
+
+/* -----------------------------------------------------
+* Custom Power
+* ----------------------------------------------------- */
+
+#custom-power {
+   margin: 0px 18px 0px 0px;
+   padding:0px;
+   font-size:13px;
+   color: @iconcolor;
+
+}
+
+/* -----------------------------------------------------
+* Clock
+* ----------------------------------------------------- */
+#clock {
+   background-color: @backgrounddark;
+   font-size: 15px;
+   color: @textcolor1;
+   border-radius: 15px;
+   padding: 0px 10px 0px 10px;
+   margin: 5px 5px 5px 5px;
+   font-weight: bold;
+}
+
+/* -----------------------------------------------------
+* Pulseaudio
+* ----------------------------------------------------- */
+
+#pulseaudio {
+   background-color: @backgroundlight;
+   font-size: 14px;
+   color: @textcolor2;
+   border-radius: 15px;
+   padding: 0px 15px 0px 15px;
+   margin: 5px 5px 5px 0px;
+   font-weight: bold;
+}
+
+/* -----------------------------------------------------
+* Connection Group
+* ----------------------------------------------------- */
+
+#network {
+   background-color: @backgroundlight;
+   font-size: 15px;
+   color: @textcolor2;
+   border-radius: 15px 0px 0px 15px;
+   padding: 0px 10px 0px 10px;
+   margin: 5px 0px 5px 0px;
+   font-weight: bold;
+}
+
+#network.wifi, #network.disconnected, #network.ethernet, #network.disabled {
+   background-color: @backgroundlight;
+   color: @textcolor2;
+}
+
+#bluetooth, #bluetooth.on, #bluetooth.connected, #bluetooth.off {
+   background-color: @backgroundlight;
+   font-size: 15px;
+   color: @textcolor2;
+   border-radius: 0px 15px 15px 0px;
+   padding: 0px 10px 0px 0px;
+   margin: 5px 5px 5px 0px;
+   font-weight: bold;
+}
+
+/* -----------------------------------------------------
+* Battery
+* ----------------------------------------------------- */
+
+#battery {
+   background-color: @backgroundlight;
+   font-size: 15px;
+   color: @textcolor2;
+   border-radius: 0px 15px 15px 0px;
+   padding: 0px 15px 0px 5px;
+   margin: 5px 15px 5px 0px;
+   font-weight: bold;
+}
+
+#battery.charging, #battery.plugged {
+   color: @textcolor2;
+   background-color: @backgroundlight;
+}
+
+@keyframes blink {
+to {
+   background-color: @backgroundlight;
+   color: @textcolor2;
+}
+}
+
+#battery.critical:not(.charging) {
+   background-color: #f53c3c;
+   color: @textcolor3;
+   animation-name: blink;
+   animation-duration: 0.5s;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+}
+
+#backlight {
+   background-color: @backgroundlight;
+   font-size: 15px;
+   color: @textcolor2;
+   border-radius: 15px 0px 0px 15px;
+   padding: 0px 10px 0px 10px;
+   margin: 5px 0px 5px 0px;
+   font-weight: bold;
+}
+
