@@ -115,8 +115,6 @@ source $ZSH/oh-my-zsh.sh
 # My aliases
 alias refresh='cd && clear && source .zshrc'
 alias pwdc='pwd | wl-copy'
-alias lu='light -A'
-alias ld='light -U'
 alias open='xdg-open'
 alias reboot='killall brave; killall Discord;killall spotify; reboot'
 alias poweroff='killall brave; killall Discord;killall spotify; poweroff'
@@ -143,5 +141,6 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-# Created by `pipx` on 2025-08-23 19:42:05
 export PATH="$PATH:/home/AleMenon/.local/bin"
+export PATH="$PATH:/home/AleMenon/.cargo/bin"
+export EDITOR="nvim"

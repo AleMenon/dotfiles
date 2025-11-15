@@ -29,6 +29,8 @@ pdf = [
 rules = [
     { name = "*.html", use = "term" },
     { name = "*.pdf", use = ["pdf", "open"] },
+    { name = "*.png", use = "open" },
+    { name = "*.bmp", use = "open" },
     { mime = "text/*", use = "edit" },
     { mime = "application/ms-shortcut", use = "open" },
     { mime = "application/*", use = "edit" },
