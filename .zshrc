@@ -113,7 +113,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # My aliases
-alias refresh='cd && clear && source .zshrc'
+alias refresh='clear && source /home/AleMenon/.zshrc'
 alias pwdc='pwd | wl-copy'
 alias open='xdg-open'
 alias reboot='killall brave; killall Discord;killall spotify; reboot'
