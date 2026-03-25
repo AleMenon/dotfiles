@@ -1,4 +1,4 @@
 [mgr]
 prepend_keymap = [
-    { on = "<C-o>", run = "shell 'dragon-drop -A -T $@'", desc = "Drag and drop selected files" },
+    { on = "<C-o>", run = "shell 'dragon-drop -A -T %s'", desc = "Drag and drop selected files" },
 ]

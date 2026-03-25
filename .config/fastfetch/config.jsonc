@@ -4,14 +4,14 @@
       "type": "builtin",
       "color": {
          "1":"blue",
-         "2":"blue",
+         "2":"blue"
       },
       "height": 10,
       "width": 20,
       "padding": {
          "top": 3,
          "left": 3,
-         "right": 0,
+         "right": 0
       }
    },
    "modules": [
@@ -38,15 +38,15 @@
          "format": "{2}"
       },
       {
-         "type": "memory",
-         "key": "│ ├󰍛",
-         "keyColor": "green"
-      },
-      {
          "type": "disk",
-         "key": "│ └󰍛",
+         "key": "│ ├󰍛",
          "keyColor": "green",
          "format": "{1} / {2} ({3})"
+      },
+      {
+         "type": "memory",
+         "key": "│ └󰍛",
+         "keyColor": "green"
       },
       {
          "type": "custom",
@@ -129,6 +129,6 @@
          "type": "colors",
          "paddingLeft": 2,
          "symbol": "circle"
-      },
+      }
    ]
 }

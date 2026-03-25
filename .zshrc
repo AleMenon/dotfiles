@@ -122,7 +122,6 @@ alias mountb='udisksctl mount -b /dev/sdb1'
 alias unmountb='udisksctl unmount -b /dev/sdb1'
 alias mountc='udisksctl mount -b /dev/sdc1'
 alias unmountc='udisksctl unmount -b /dev/sdc1'
-alias activate='source ~/main/bin/activate'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -144,3 +143,23 @@ function y() {
 export PATH="$PATH:/home/AleMenon/.local/bin"
 export PATH="$PATH:/home/AleMenon/.cargo/bin"
 export EDITOR="nvim"
+export NEWT_COLORS="
+root=blue,black;
+border=blue,black;
+window=blue,black;
+shadow=black,black;
+title=blue,black;
+button=blue,black;
+actbutton=black,blue;
+checkbox=blue,black;
+actcheckbox=black,blue;
+entry=blue,black;
+label=blue,black;
+listbox=blue,black;
+actlistbox=black,blue;
+textbox=blue,black;
+acttextbox=black,blue;
+helpline=black,blue;
+roottext=blue,black;
+actsellistbox=black,blue
+"

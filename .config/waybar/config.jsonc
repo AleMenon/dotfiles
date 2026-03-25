@@ -6,7 +6,7 @@
    // Choose the order of the modules
    "modules-left": [
       "hyprland/workspaces",
-      "wlr/taskbar",
+      "wlr/taskbar"
    ],
 
    "modules-center": [
@@ -32,7 +32,7 @@
       "orientation": "horizontal",
       "modules": [
          "backlight",
-         "battery",
+         "battery"
       ]
    },
 
@@ -59,7 +59,7 @@
       "icon-size": 20,
       "tooltip-format": "{title}",
       "on-click": "activate",
-      "on-click-middle": "close",
+      "on-click-middle": "close"
    },
 
    // Power Menu
@@ -71,7 +71,7 @@
 
    "clock": {
       "format": "{:%a, %d/%m/%y |   %H:%M}",
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
       //"format-alt": "{:%d/%m/%Y}"
    },
 
@@ -99,14 +99,14 @@
       "tooltip-format": "{ifname} ({signalStrength}%)",
       "format-linked": "{ifname} (No IP)  ",
       "format-disconnected": "Disconnected ⚠ ",
-      "on-click": "networkmanager_dmenu"
+      "on-click": "kitty --class float_term -e wlctl"
    },
 
    "bluetooth": {
       // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
       "format": "{status} ",
       "format-connected": "{num_connections} connected ",
-      "on-click": "blueman-manager"
+      "on-click": "kitty --class float_term -e bluetui"
    },
 
    "pulseaudio": {
@@ -126,11 +126,12 @@
          "car": " ",
          "default": ["", " ", " "]
       },
+      "on-click": "kitty --class float_term -e pulsemixer"
    },
 
    "backlight": {
        "device": "intel_backlight",
        "format": "{percent}% {icon}",
        "format-icons": [""]
-   },
+   }
 }
