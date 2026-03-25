@@ -10,7 +10,7 @@ tab_size=3
 
 [opener]
 neovim = [
-    { run = "nvim %s",  desc = "Neovim", block = true, for = "unix" },
+    { run = "nvim %s",  desc = "Neovim", block = true },
 ]
 pdf_web = [
     { run = "brave %s", desc = "Browser", block = false, orphan = true, for = "unix" },
@@ -19,16 +19,19 @@ pdf_app = [
     { run = "evince %s", desc = "Evince", block = false, orphan = true, for = "unix" },
 ]
 img_web = [
-    { run = "gimp %s", desc = "Gimp", block = false, orphan = true, for = "unix" },
+    { run = "brave %s", desc = "Browser", block = false, orphan = true, for = "unix" },
 ]
 img_app = [
-    { run = "brave %s", desc = "Browser", block = false, orphan = true, for = "unix" },
+    { run = "gimp %s", desc = "Gimp", block = false, orphan = true, for = "unix" },
+]
+windows_open = [
+    { run = 'explorer "%s1"', orphan = true, desc = "Open", for = "windows" },
 ]
 
 [open]
 rules = [
     { mime = "text*", use = "neovim" },
     { mime = "*wine*", use = "neovim" },
-    { mime = "*pdf", use = ["pdf_web", "pdf_app"] },
-    { mime = "image*", use = ["img_web", "img_app"] },
+    { mime = "*pdf", use = ["pdf_web", "pdf_app", "windows_open"] },
+    { mime = "image*", use = ["img_web", "img_app", "windows_open"] },
 ]

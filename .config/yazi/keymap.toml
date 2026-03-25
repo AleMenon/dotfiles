@@ -1,4 +1,6 @@
 [mgr]
 prepend_keymap = [
-    { on = "<C-o>", run = "shell 'dragon-drop -A -T %s'", desc = "Drag and drop selected files" },
+    { on = "<C-o>", run = "shell 'dragon-drop -A -T %s'", desc = "Drag and drop selected files (Unix)" },
+    { on = "<C-e>", run = "shell 'explorer %d1 &'", desc = "Open explorer in the current dir (Windows)" },
+    { on = "l", run  = "plugin smart-enter", desc = "Enter the child directory, or open the file"},
 ]
