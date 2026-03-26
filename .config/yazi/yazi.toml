@@ -9,6 +9,12 @@ show_hidden=true
 tab_size=3
 
 [opener]
+libreoffice = [
+    { run = "libreoffice %s1", desc = "Libreoffice", block = false, orphan = true, for = "unix"}
+]
+run = [
+    { run = "%s1", desc= "Execute", block = true, for = "unix"},
+]
 neovim = [
     { run = "nvim %s",  desc = "Neovim", block = true },
 ]
@@ -30,8 +36,14 @@ windows_open = [
 
 [open]
 rules = [
+    { mime = "*msword", use = ["windows_open", "libreoffice"] },
+    { mime = "*opendocument*", use = ["windows_open", "libreoffice"] },
+    { mime = "*officedocument*", use = ["windows_open", "libreoffice"] },
     { mime = "text*", use = "neovim" },
+    { mime = "inode/empty", use = "neovim" },
+    { mime = "*javascript", use = "neovim" },
     { mime = "*wine*", use = "neovim" },
     { mime = "*pdf", use = ["pdf_web", "pdf_app", "windows_open"] },
     { mime = "image*", use = ["img_web", "img_app", "windows_open"] },
+    { mime = "application/executable", use = "run" },
 ]
