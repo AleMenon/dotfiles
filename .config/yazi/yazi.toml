@@ -14,18 +14,16 @@ libreoffice = [
 ]
 run = [
     { run = "%s1", desc= "Execute", block = true, for = "unix"},
+    { run = "%s1", desc= "Execute", block = true, for = "windows"},
 ]
 neovim = [
     { run = "nvim %s",  desc = "Neovim", block = true },
 ]
-pdf_web = [
+web = [
     { run = "brave %s", desc = "Browser", block = false, orphan = true, for = "unix" },
 ]
 pdf_app = [
     { run = "evince %s", desc = "Evince", block = false, orphan = true, for = "unix" },
-]
-img_web = [
-    { run = "brave %s", desc = "Browser", block = false, orphan = true, for = "unix" },
 ]
 img_app = [
     { run = "gimp %s", desc = "Gimp", block = false, orphan = true, for = "unix" },
@@ -39,11 +37,13 @@ rules = [
     { mime = "*msword", use = ["windows_open", "libreoffice"] },
     { mime = "*opendocument*", use = ["windows_open", "libreoffice"] },
     { mime = "*officedocument*", use = ["windows_open", "libreoffice"] },
+    { mime = "*html", use = ["windows_open", "web", "neovim"] },
     { mime = "text*", use = "neovim" },
     { mime = "inode/empty", use = "neovim" },
     { mime = "*javascript", use = "neovim" },
     { mime = "*wine*", use = "neovim" },
-    { mime = "*pdf", use = ["pdf_web", "pdf_app", "windows_open"] },
-    { mime = "image*", use = ["img_web", "img_app", "windows_open"] },
-    { mime = "application/executable", use = "run" },
+    { mime = "*pdf", use = ["web", "pdf_app", "windows_open"] },
+    { mime = "image*", use = ["web", "img_app", "windows_open"] },
+    { mime = "*executable*", use = "run" },
+    { mime = "*json*", use = "neovim" },
 ]
