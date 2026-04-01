@@ -47,3 +47,8 @@ rules = [
     { mime = "*executable*", use = "run" },
     { mime = "*json*", use = "neovim" },
 ]
+
+[plugin]
+prepend_previewers = [
+    { mime = "*executable*",   run = "exiftool" }
+]
