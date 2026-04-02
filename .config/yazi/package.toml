@@ -1,29 +1,29 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "1962818"
-hash = "6fa6a05a81c98dd000fbca3cca6e9682"
+rev = "e84f4fe"
+hash = "1e13c39c1ba52ad020e6e26a2dd39ae5"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "1962818"
-hash = "187cc58ba7ac3befd49c342129e6f1b6"
+rev = "e84f4fe"
+hash = "2ede7b0f1beade8390be1b52cfed6a49"
 
 [[plugin.deps]]
 use = "imsi32/yatline"
 rev = "c5d4b48"
-hash = "e6e98d12b1648d1894c2b560d85eeaa7"
+hash = "91c9b9a3355e213b801fdb0c5fc92dc1"
 
 [[plugin.deps]]
 use = "wekauwau/yatline-tokyo-night"
 rev = "b4a6310"
-hash = "215729a555fe5286f1eb35520963d08"
+hash = "fcb2f23df48227dd576f58eaa58d78ec"
 
 [[plugin.deps]]
 use = "AleMenon/exiftool"
-rev = "225c995"
-hash = "3c16df831d5eaf86804b23e2839fbb4"
+rev = "4c35573"
+hash = "938c57c5de369a25242229138b9222cd"
 
 [[flavor.deps]]
 use = "BennyOe/tokyo-night"
 rev = "8e6296f"
-hash = "d9da921c3bd37ba32ee27a8a7a40461f"
+hash = "49258e379077f4b0d2e62dfdb131c7d"
