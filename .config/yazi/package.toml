@@ -23,6 +23,11 @@ use = "AleMenon/exiftool"
 rev = "4c35573"
 hash = "938c57c5de369a25242229138b9222cd"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:types"
+rev = "e84f4fe"
+hash = "a550f7711bd831501abf72ee26b85a7d"
+
 [[flavor.deps]]
 use = "BennyOe/tokyo-night"
 rev = "8e6296f"
