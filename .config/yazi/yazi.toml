@@ -10,26 +10,29 @@ tab_size=3
 
 [opener]
 libreoffice = [
-    { run = "libreoffice %s1", desc = "Libreoffice", block = false, orphan = true, for = "unix"}
+    { run = "libreoffice %s1", desc = "Libreoffice", orphan = true, for = "unix" }
 ]
 run = [
-    { run = "%s1", desc= "Execute", block = true, for = "unix"},
-    { run = "%s1", desc= "Execute", block = true, for = "windows"},
+    { run = "%s1", desc= "Execute", block = true },
 ]
 neovim = [
     { run = "nvim %s",  desc = "Neovim", block = true },
 ]
 web = [
-    { run = "brave %s", desc = "Browser", block = false, orphan = true, for = "unix" },
+    { run = "brave %s", desc = "Browser", orphan = true, for = "unix" },
 ]
 pdf_app = [
-    { run = "evince %s", desc = "Evince", block = false, orphan = true, for = "unix" },
+    { run = "evince %s", desc = "Evince", orphan = true, for = "unix" },
 ]
 img_app = [
-    { run = "gimp %s", desc = "Gimp", block = false, orphan = true, for = "unix" },
+    { run = "gimp %s", desc = "Gimp", orphan = true, for = "unix" },
 ]
 windows_open = [
     { run = 'explorer "%s1"', orphan = true, desc = "Open", for = "windows" },
+]
+
+decompress = [
+    { run = "7z x %s1", block = true, desc = "Decompress" },
 ]
 
 [open]
@@ -46,6 +49,9 @@ rules = [
     { mime = "image*", use = ["web", "img_app", "windows_open"] },
     { mime = "*executable*", use = "run" },
     { mime = "*json*", use = "neovim" },
+    { mime = "*ms-shortcut", use = "windows_open" },
+    { mime = "*zip", use = "decompress" },
+    { mime = "*compressed", use = "decompress" },
 ]
 
 [plugin]

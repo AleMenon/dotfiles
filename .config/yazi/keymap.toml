@@ -2,5 +2,10 @@
 prepend_keymap = [
     { on = "<C-o>", run = "shell 'dragon-drop -A -T %s'", desc = "Drag and drop selected files (Unix)" },
     { on = "<C-e>", run = "shell 'explorer %d1 &'", desc = "Open explorer in the current dir (Windows)" },
-    { on = "l", run  = "plugin smart-enter", desc = "Enter the child directory, or open the file"},
+    { on = "l", run  = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
+    { on = ["c", "a", "a"], run = "plugin compress", desc = "Compress selected files" },
+    { on = ["c", "a", "p"], run = "plugin compress -p", desc = "Compress selected files (password)" },
+    { on = ["c", "a", "h"], run = "plugin compress -ph", desc = "Compress selected files (password+header)" },
+    { on = ["c", "a", "l"], run = "plugin compress -l", desc = "Compress selected files (compression level)" },
+    { on = ["c", "a", "u"], run = "plugin compress -phl", desc = "Compress selected files (password+header+level)" },
 ]
