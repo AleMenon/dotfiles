@@ -1,0 +1,6 @@
+font=Roboto
+background-color=#1e1e2e
+border-color=#7f849c
+text-color=#bac2de
+border-radius=10
+default-timeout=3000
