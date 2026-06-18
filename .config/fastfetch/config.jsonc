@@ -102,7 +102,7 @@
       "break",
       {
          "type": "custom",
-         "format": "\u001b[33m┌─────────────────── System Times ───────────────────┐"
+         "format": "\u001b[33m┌────────────────────── Times ───────────────────────┐"
       },
       {
          "type": "command",
@@ -119,6 +119,7 @@
       {
          "type": "datetime",
          "key": "│ DateTime",
+         "format": "{day-pretty}-{month-pretty}-{year} {hour-pretty}:{minute-pretty}:{second-pretty}",
          "keyColor": "yellow"
       },
       {
