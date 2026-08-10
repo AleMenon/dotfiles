@@ -1,7 +1,9 @@
 [mgr]
 prepend_keymap = [
+    { on = "s", run = "search --via=fd --args='--no-ignore-vcs --hidden'", desc = "Search via fd" },
+    { on = "S", run = "search --via=rg --args='--ignore-case --no-ignore'", desc = "Search via rg" },
     { on = "<C-o>", run = "shell 'dragon-drop -A -T -x %s'", desc = "Drag and drop selected files (Unix)" },
-    { on = "<C-e>", run = "shell 'explorer %d1 &'", desc = "Open explorer in the current dir (Windows)" },
+    { on = "<C-e>", run = "shell 'explorer . &'", desc = "Open explorer in the current dir (Windows)" },
     { on = "l", run  = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
     { on = ["c", "a", "a"], run = "plugin compress", desc = "Compress selected files" },
     { on = ["c", "a", "p"], run = "plugin compress -p", desc = "Compress selected files (password)" },

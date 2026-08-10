@@ -52,6 +52,8 @@ rules = [
     { mime = "*ms-shortcut", use = "windows_open" },
     { mime = "*zip", use = "decompress" },
     { mime = "*compressed", use = "decompress" },
+    { mime = "*rar", use = "decompress" },
+    { mime = "*ms-msi", use = "windows_open"}
 ]
 
 [plugin]
