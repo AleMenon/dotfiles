@@ -1,4 +1,5 @@
 require("full-border"):setup()
+
 local tokyo_night_theme = require("yatline-tokyo-night"):setup("storm") -- or moon/storm/day
 require("yatline"):setup({
     theme = tokyo_night_theme,
@@ -49,4 +50,21 @@ require("yatline"):setup({
             }
         }
     },
+})
+
+require("bunny"):setup({
+    hops = {
+        { key = "h", path = "C:/Users/desen/Desktop", desc = "Desktop" },
+        { key = "d", path = "C:/Users/desen/Downloads", desc = "Downloads" },
+        { key = "t", path = "D:/testautomationlib", desc = "Automation Directory" },
+        { key = "m", path = "D:/testautomationlib/mocks/intweb", desc = "Mock" },
+        { key = "w", path = "G:/APLICATIVOS/Servicos/integradorWeb" },
+        { key = "e", path = "G:/APLICATIVOS/Servicos/integradorERP" },
+        { key = "s", path = "C:/SIFN", desc = "SIFN Directory" },
+    },
+    desc_strategy = "path",
+    ephemeral = true,
+    tabs = true,
+    notify = false,
+    fuzzy_cmd = "fzf",
 })
