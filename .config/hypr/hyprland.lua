@@ -199,6 +199,7 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser .. " --password-store=basic")
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(browser .. " --app=https://web.whatsapp.com/ --password-store=basic"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("~/.config/rofi/scripts/clipboard_t1"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy'))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim - | tee ~/Pictures/$(date +%Y%m%d-%H%M%S).png | wl-copy'))
 hl.bind(mainMod .. " + SHIFT + G", hl.dsp.exec_cmd("wlogout --buttons-per-row 2"))
 hl.bind(mainMod .. " + CTRL + N", hl.dsp.exec_cmd("kitty --class float_term -e wlctl"))
 hl.bind(mainMod .. " + CTRL + S", hl.dsp.exec_cmd("kitty --class float_term -e pulsemixer"))
@@ -214,7 +215,7 @@ hl.bind(mainMod .. " + X", function()
     hl.dispatch(hl.dsp.window.resize({ x = 1092, y = 614}))
     hl.dispatch(hl.dsp.window.center())
 end)
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.resize({ x = -20, y = 0, relative = true }), {repeating = true })
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.resize({ x = 20, y = 0, relative = true }), {repeating = true })
 hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.resize({ x = 0, y = -20, relative = true }), {repeating = true })
@@ -244,6 +245,8 @@ hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+
+hl.bind(mainMod .. "+ S", hl.dsp.layout("togglesplit"))
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
@@ -289,15 +292,7 @@ hl.window_rule({
 hl.window_rule({
     name = "Discord",
     match = {
-        initial_title = "Discord"
-    },
-    workspace = "3 silent"
-})
-
-hl.window_rule({
-    name = "Discord",
-    match = {
-        title = "Discord Updater"
+        class = "discord"
     },
     workspace = "3 silent"
 })

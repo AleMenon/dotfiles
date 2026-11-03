@@ -112,6 +112,34 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Environment variables
+export PATH="$PATH:/home/AleMenon/.local/bin"
+export PATH="$PATH:/home/AleMenon/.cargo/bin"
+export EDITOR="nvim"
+export NEWT_COLORS="
+root=blue,black;
+border=blue,black;
+window=blue,black;
+shadow=black,black;
+title=blue,black;
+button=blue,black;
+actbutton=black,blue;
+checkbox=blue,black;
+actcheckbox=black,blue;
+entry=blue,black;
+label=blue,black;
+listbox=blue,black;
+actlistbox=black,blue;
+textbox=blue,black;
+acttextbox=black,blue;
+helpline=black,blue;
+roottext=blue,black;
+actsellistbox=black,blue
+"
+export LIBVIRT_DEFAULT_URI=qemu:///system
+export PATH="$HOME/.npm-global/bin:$PATH"
+export SHELL=$(which zsh)
+
 # My aliases
 alias refresh='clear && source /home/AleMenon/.zshrc'
 alias pwdc='pwd | wl-copy'
@@ -140,26 +168,8 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-export PATH="$PATH:/home/AleMenon/.local/bin"
-export PATH="$PATH:/home/AleMenon/.cargo/bin"
-export EDITOR="nvim"
-export NEWT_COLORS="
-root=blue,black;
-border=blue,black;
-window=blue,black;
-shadow=black,black;
-title=blue,black;
-button=blue,black;
-actbutton=black,blue;
-checkbox=blue,black;
-actcheckbox=black,blue;
-entry=blue,black;
-label=blue,black;
-listbox=blue,black;
-actlistbox=black,blue;
-textbox=blue,black;
-acttextbox=black,blue;
-helpline=black,blue;
-roottext=blue,black;
-actsellistbox=black,blue
-"
+function sysup() {
+    npm update --global
+    nvim --headless "+Lazy load mason.nvim mason-tool-installer.nvim" "+Lazy sync" "+MasonUpdate" "+MasonToolsUpdate" "+qa"
+}
+
