@@ -52,7 +52,9 @@ require("yatline"):setup({
     },
 })
 
-require("bunny"):setup({
+local is_windows = package.config:sub(1, 1) == "\\"
+local hops = {}
+if is_windows then
     hops = {
         { key = "h", path = "C:/Users/desen/Desktop", desc = "Desktop" },
         { key = "d", path = "C:/Users/desen/Downloads", desc = "Downloads" },
@@ -61,7 +63,17 @@ require("bunny"):setup({
         { key = "w", path = "G:/APLICATIVOS/Servicos/integradorWeb" },
         { key = "e", path = "G:/APLICATIVOS/Servicos/integradorERP" },
         { key = "s", path = "C:/SIFN", desc = "SIFN Directory" },
-    },
+    }
+else
+    hops = {
+        { key = "h", path = "~/Desktop/", desc = "Desktop" },
+        { key = "d", path = "~/Downloads/", desc = "Downloads" },
+        { key = "f", path = "~/Documents/", desc = "Documents" },
+    }
+end
+
+require("bunny"):setup({
+    hops = hops,
     desc_strategy = "path",
     ephemeral = true,
     tabs = true,
