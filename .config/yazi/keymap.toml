@@ -11,4 +11,5 @@ prepend_keymap = [
     { on = ["c", "a", "l"], run = "plugin compress -l", desc = "Compress selected files (compression level)" },
     { on = ["c", "a", "u"], run = "plugin compress -phl", desc = "Compress selected files (password+header+level)" },
     { on = "[", run = "plugin bunny", desc = "Start bunny.yazi" },
+    { on = "i", run = "plugin easyjump", desc = "Start easjump.yazi" },
 ]

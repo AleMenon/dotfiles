@@ -80,3 +80,5 @@ require("bunny"):setup({
     notify = false,
     fuzzy_cmd = "fzf",
 })
+
+require("easyjump"):setup()
