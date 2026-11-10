@@ -139,6 +139,7 @@ actsellistbox=black,blue
 export LIBVIRT_DEFAULT_URI=qemu:///system
 export PATH="$HOME/.npm-global/bin:$PATH"
 export SHELL=$(which zsh)
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # My aliases
 alias refresh='clear && source /home/AleMenon/.zshrc'
@@ -167,9 +168,17 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
-
 function sysup() {
-    npm update --global
-    nvim --headless "+Lazy load mason.nvim mason-tool-installer.nvim" "+Lazy sync" "+MasonUpdate" "+MasonToolsUpdate" "+qa"
-}
+    echo "==> Updating system packages..."
+    yay -Syu || return
 
+    echo "==> Updating Neovim plugins and tools..."
+    nvim --headless \
+        "+Lazy load mason.nvim mason-tool-installer.nvim" \
+        "+Lazy! sync" \
+        "+MasonUpdate" \
+        "+MasonToolsUpdate" \
+        "+qa" || return
+
+    echo "==> System update completed!"
+}
