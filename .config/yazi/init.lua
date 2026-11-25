@@ -56,19 +56,17 @@ local is_windows = package.config:sub(1, 1) == "\\"
 local hops = {}
 if is_windows then
     hops = {
-        { key = "h", path = "C:/Users/desen/Desktop", desc = "Desktop" },
-        { key = "d", path = "C:/Users/desen/Downloads", desc = "Downloads" },
+        { key = "d", path = "C:/Users/desen/Desktop", desc = "Desktop" },
         { key = "t", path = "D:/testautomationlib", desc = "Automation Directory" },
         { key = "m", path = "D:/testautomationlib/mocks/intweb", desc = "Mock" },
         { key = "w", path = "G:/APLICATIVOS/Servicos/integradorWeb" },
         { key = "e", path = "G:/APLICATIVOS/Servicos/integradorERP" },
         { key = "s", path = "C:/SIFN", desc = "SIFN Directory" },
+        { key = "u", path = "G:/COLABORADORES/AlEXANDRE-MENON" },
     }
 else
     hops = {
-        { key = "h", path = "~/Desktop/", desc = "Desktop" },
-        { key = "d", path = "~/Downloads/", desc = "Downloads" },
-        { key = "f", path = "~/Documents/", desc = "Documents" },
+        { key = "d", path = "~/Documents/", desc = "Documents" },
     }
 end
 
